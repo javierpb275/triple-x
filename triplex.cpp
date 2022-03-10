@@ -10,8 +10,8 @@ int main()
     int b = 3;
     int c = 2;
 
-    int sum = a + b + c;
-    int product = a * b * c;
+    const int sum = a + b + c;
+    const int product = a * b * c;
 
     std::cout << std::endl;
     std::cout << sum << std::endl;
