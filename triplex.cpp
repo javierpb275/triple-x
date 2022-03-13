@@ -1,16 +1,20 @@
 #include <iostream>
 
-int main()
+void PrintIntroduction()
 {
+    //Print welcome messages to the terminal:
+    std::cout << "You are a secret agent breaking into a secure server room...\n";
+    std::cout << "Enter the correct code to continue...\n\n";
+}
 
+void PlayGame()
+{
     //cout: character output
     //<<: insertion operator
     //cin: character input
     //>>: extraction operator
 
-    //Print welcome messages to the terminal:
-    std::cout << "You are a secret agent breaking into a secure server room...\n";
-    std::cout << "Enter the correct code to continue...\n\n";
+    PrintIntroduction();
 
     //Declare 3 number code
     const int CodeA = 4;
@@ -44,6 +48,10 @@ int main()
     {
         std::cout << "\nYou lose!";
     }
+}
 
+int main()
+{
+    PlayGame();
     return 0;
 }
