@@ -3,11 +3,11 @@
 void PrintIntroduction()
 {
     //Print welcome messages to the terminal:
-    std::cout << "You are a secret agent breaking into a secure server room...\n";
+    std::cout << "\n\nYou are a secret agent breaking into a secure server room...\n";
     std::cout << "Enter the correct code to continue...\n\n";
 }
 
-void PlayGame()
+bool PlayGame()
 {
     //cout: character output
     //<<: insertion operator
@@ -43,15 +43,24 @@ void PlayGame()
     if (GuessSum == CodeSum && GuessProduct == CodeProduct)
     {
         std::cout << "\nYou win!";
+        return true;
     }
     else
     {
         std::cout << "\nYou lose!";
+        return false;
     }
 }
 
 int main()
 {
-    PlayGame();
+
+    while (true)
+    {
+        bool bLevelComplete = PlayGame();
+        std::cin.clear();//Clears any errors
+        std::cin.ignore();//Discard the buffer
+    }
+    
     return 0;
 }
