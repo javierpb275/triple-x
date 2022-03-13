@@ -1,20 +1,20 @@
 #include <iostream>
 
-void PrintIntroduction()
+void PrintIntroduction(int Difficulty)
 {
     //Print welcome messages to the terminal:
-    std::cout << "\n\nYou are a secret agent breaking into a secure server room...\n";
-    std::cout << "Enter the correct code to continue...\n\n";
+    std::cout << "\n\nYou are a secret agent breaking into a level " << Difficulty;
+    std::cout << " secure server room... \nEnter the correct code to continue...\n\n";
 }
 
-bool PlayGame()
+bool PlayGame(int Difficulty)
 {
     //cout: character output
     //<<: insertion operator
     //cin: character input
     //>>: extraction operator
 
-    PrintIntroduction();
+    PrintIntroduction(Difficulty);
 
     //Declare 3 number code
     const int CodeA = 4;
@@ -54,12 +54,17 @@ bool PlayGame()
 
 int main()
 {
-
+    int LevelDifficulty = 1;
     while (true)
     {
-        bool bLevelComplete = PlayGame();
+        bool bLevelComplete = PlayGame(LevelDifficulty);
         std::cin.clear();//Clears any errors
         std::cin.ignore();//Discard the buffer
+        if (bLevelComplete)
+        {
+            //increase the level difficulty
+            ++LevelDifficulty;
+        }
     }
     
     return 0;
